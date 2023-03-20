@@ -60,12 +60,14 @@ public class BoardController {
 	public String login(@RequestParam Map<String,Object> map,
 			HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception {
 		request.setCharacterEncoding("utf-8");
-		System.out.println(map);
+		
 		// 서비스 호출
 		Map user = service.login(map);
+		System.out.println(user);
+		
 		
 		if(user == null) {  // 로그인 실패
-			
+			System.out.println("로그인실패");
 			return "redirect:login";
 		}else {   // 로그인 성공
 			// 세션 부여
@@ -73,6 +75,8 @@ public class BoardController {
 			return "redirect:/";
 		}		
 	}
+	
+	
 	
 	@RequestMapping(value="board/list", method = RequestMethod.GET)
 	public ModelAndView list1(@RequestParam(value="page", required=false, defaultValue="1")int page,
@@ -261,29 +265,24 @@ public class BoardController {
 		return "point";
 	}
 	
-	@RequestMapping(value="board/productord", method = RequestMethod.GET)
-	public String productord() {
-		
-		return "productord";
-	}
+	   @RequestMapping(value="board/product1", method = RequestMethod.GET)
+	   public String product1() {
+	      
+	      return "product1";
+	   }
+	   
+	   @RequestMapping(value="board/product2", method = RequestMethod.GET)
+	   public String product2() {
+	      
+	      return "product2";
+	   }
+	   
+	   @RequestMapping(value="board/product3", method = RequestMethod.GET)
+	   public String product3() {
+	      
+	      return "product3";
+	   }
 	
-	@RequestMapping(value="board/T_List", method = RequestMethod.GET)
-	public String T_List() {
-		
-		return "T_List";
-	}
-	
-	@RequestMapping(value="board/T_oneSelect1", method = RequestMethod.GET)
-	public String T_oneSelect1() {
-		
-		return "T_oneSelect1";
-	}
-	
-	@RequestMapping(value="board/T_twoSelect1", method = RequestMethod.GET)
-	public String T_twoSelect1() {
-		
-		return "T_twoSelect1";
-	}
 	
 }
 

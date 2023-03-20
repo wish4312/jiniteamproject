@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
-	
+	/*
 	@RequestMapping(value="login/loginForm", method = RequestMethod.GET) //하이퍼링크는 get 방식으로 사용함
 	public ModelAndView loginForm() {
 		logger.info("로그인 폼 처리화면 입니다.");
@@ -28,7 +28,7 @@ public class LoginController {
 		mav.setViewName("login/loginForm");
 		return mav;
 	}
-	
+
 //	1.request 파라미터 전달받는 방법1
 	@RequestMapping(value="login/login", method = RequestMethod.POST)
 	public ModelAndView login(HttpServletRequest request) throws Exception {
@@ -47,12 +47,12 @@ public class LoginController {
 	
 //	2.request 파라미터를 전달받는 방법2 -> @RequestParam
 	@RequestMapping(value="login/login2", method = RequestMethod.POST)
-	public ModelAndView login2(@RequestParam("userId") String userId, 
-			@RequestParam("name") String name, HttpServletRequest request) throws Exception {
+	public ModelAndView login2(@RequestParam("m_id") String id, 
+							   @RequestParam("m_pw") int pw, HttpServletRequest request) throws Exception {
 		request.setCharacterEncoding("utf-8");	
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("userId", userId);
-		mav.addObject("name", name);
+		mav.addObject("id", id);
+		mav.addObject("pw", pw);
 		mav.setViewName("login/result");
 		return mav;
 	}
@@ -76,5 +76,5 @@ public class LoginController {
 		mav.setViewName("login/result");
 		return mav;
 	}
-	
+	*/
 }

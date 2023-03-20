@@ -12,6 +12,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <%@ include file="include/head.jsp" %>
 <%@ include file="include/header.jsp" %>
 
+<style>
+
+#list_wrap{
+	width:100%;
+	height:700px;
+	margin:auto; /*가운데 정렬*/
+}
+
+#list_box1{
+	width:10%;
+	height:700px;
+	float:left;
+}
+#list_box2{
+	width:70%;
+	height:700px;
+	float:left;
+
+}
+#list_box3{
+	width:10%;
+	height:700px;
+	background-color:red;
+	float:left;
+}
+
+
+</style>
+
 
 <script>
 function fn_prev(page, range, rangeSize) {      
@@ -76,8 +105,14 @@ desired effect
      </div>
 </div>
 
-<!-- title end-->
 
+<!-- title end-->
+<div id="list_wrap">
+
+	<div id="list_box1"></div>
+	<div id="list_box2">
+
+<div id="list_box1"></div>
  <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
         <div class="modal-dialog modal-fullscreen">
@@ -99,20 +134,11 @@ desired effect
 
 
   
-  <div class="content-wrapper"><br><br>
-    <section class="content-header">
-        <div class="box">
-		<div class="box-header with-border">
-		<tr>
-			<td colspan="5" align="center">
-				<a href="${contextPath}/board/register" class="btn btn-primary py-md-2 px-md-3 me-2 animated slideInCenter">글쓰기</a>	
-			</td>
-		</tr>
-			
+  <div class="content-wrapper"></div>
+		<div style="float:right;">
+				<a href="${contextPath}/board/register" class="btn btn-primary py-md-2 px-md-3 me-2 animated slideInCenter">글쓰기</a>
 		</div>
-		</div>
-    </section>
-
+	<br><br>
     <!-- Main content --><br>
     <section class="content container-fluid">
 		<div>${msg}</div>
@@ -163,6 +189,12 @@ desired effect
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+</div>
+
+</div>
+
 
 </body>
+
+<%@ include file="include/footer.jsp" %>
 </html>

@@ -38,8 +38,10 @@ public interface BoardDAO {
 	//댓글 삭제
 	public int replyDelete(BoardReply boardReply) throws Exception;
 	
+	
 	//로그인 처리를 위한 메소드
 	public Map login(Map<String, Object> map);
+	
 	
 	//코드
 	public List<CodeDTO> codeList(CodeDTO CodeDTO) throws Exception;

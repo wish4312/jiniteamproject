@@ -2,19 +2,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath }" />
-<%@ page session="true" %>
-<%@ include file="include/head.jsp" %>
-<%@ include file="include/header.jsp" %>
-
+<%@ page session="false" %>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
+<%@ include file="include/head.jsp" %>
 <%@ include file="include/header.jsp" %>
-<html lang="en">
-
 
 <body>
  
@@ -49,60 +45,64 @@ scratch. This page gets rid of all links and provides the needed markup only.
  
   
     <!-- Service Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.0s" style="visibility: visible; animation-delay: 0.0s; animation-name: fadeInUp;">
+    
+                     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 900px;">
                 <h5 class="fw-bold text-primary text-uppercase">여행지 추천!!</h5>
-                <h1 class="mb-0">비활동적인 활동중에 좋아하는것은?</h1>
+                <h1 class="mb-0">당신이 원하는 여행 스타일은 무엇인가요?</h1>
             </div>
             <div class="row g-5">
-                <div class="col-lg-3 col-md-1 wow zoomIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                       
-                        <h4 class="mb-2"></h4>
-                        <p class="m-0"></p>
-                       <img src= "${contextPath}/resources/bootstrap/img/k-img5.jpg" width="270x" height="200px" alt="Image">
-                          <a class="btn btn-lg btn-primary rounded" href="${contextPath}/board/T_twoSelect2_1">
-                            <i class="bi bi-arrow-right"></i>
-                       </a>
+                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: slideInUp;">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="${contextPath}/resources/bootstrap/img/k-img5.jpg" alt="img">
+                            <div class="team-social">
+                               <a class="btn btn-lg btn-primary btn-lg-square rounded" title = "문화관람" href="${contextPath}/board/T_twoSelect2"><i class="bi bi-arrow-right"></i></a>
+                              
+                            </div>
+                        </div>
+                      
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-1 wow zoomIn" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                       
-                         <h4 class="mb-2"></h4>
-                        <p class="m-0"></p>
-                       <img src= "${contextPath}/resources/bootstrap/img/k-img6.jpg" width="270x" height="200px" alt="Image">
-                          <a class="btn btn-lg btn-primary rounded" href="${contextPath}/board/T_twoSelect3_1">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-1 wow zoomIn" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: zoomIn;">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                          <h4 class="mb-2"></h4>
-                        <p class="m-0"></p>
-                       <img src= "${contextPath}/resources/bootstrap/img/k-img7.jpg" width="270x" height="200px" alt="Image">
-                          <a class="btn btn-lg btn-primary rounded" href="${contextPath}/board/T_twoSelect4_1">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                <div class="col-lg-3 wow slideInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: slideInUp;">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="${contextPath}/resources/bootstrap/img/k-img6.jpg" alt="img">
+                            <div class="team-social">
+                           <a class="btn btn-lg btn-primary btn-lg-square rounded" title = "체험" href="${contextPath}/board/T_twoSelect3"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
                        
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-1 wow zoomIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                       <h4 class="mb-2"></h4>
-                        <p class="m-0"></p>
-                       <img src= "${contextPath}/resources/bootstrap/img/k-img8.jpg" width="270x" height="200px" alt="Image">
-                          <a class="btn btn-lg btn-primary rounded" href="${contextPath}/board/T_twoSelect5_1">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                  <div class="col-lg-3 wow slideInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: slideInUp;">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="${contextPath}/resources/bootstrap/img/k-img7.jpg" alt="img">
+                            <div class="team-social">
+                           <a class="btn btn-lg btn-primary btn-lg-square rounded" title = "자연힐링" href="${contextPath}/board/T_twoSelect4"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                       
                     </div>
                 </div>
-             </div>
-             </div>
-             </div>
-                        
+                  <div class="col-lg-3 wow slideInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: slideInUp;">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="${contextPath}/resources/bootstrap/img/k-img8.jpg" alt="img">
+                            <div class="team-social">
+                           <a class="btn btn-lg btn-primary btn-lg-square rounded" title = "도시힐링" href="${contextPath}/board/T_twoSelect5"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+             
+                    </div>
+                </div>
+            </div>
+       
     <!-- Service End -->
 
 	<!-- Footer Start -->

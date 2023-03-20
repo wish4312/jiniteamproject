@@ -67,13 +67,15 @@
 		WHERE BD_NUM = #{BD_NUM};
 	</update>                      
 	
+	
 	<!--  로그인 처리를 위한 SQL -->
 	<select id="login" parameterType="java.util.Map" resultType="java.util.Map">
-		SELECT M_id,M_ename
+		SELECT *
 		  FROM m_membership
-		 WHERE m_id = #{m_id}
-		   AND m_pw = #{m_pw};
+		 WHERE M_id = #{M_id}
+		   AND M_pw = #{M_pw};
 	</select>
+	
 	
 	<!-- 댓글목록 조회(게시글번호에 해당하는 조회) -->
 	<select id="detail1" parameterType="java.lang.Integer" resultType="BoardReply">

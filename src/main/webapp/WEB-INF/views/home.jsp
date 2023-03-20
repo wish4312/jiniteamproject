@@ -109,4 +109,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="${contextPath}/resources/bootstrap/js/main.js"></script>
 </body>
 
+<%@ include file="include/footer.jsp" %>
+
 </html>

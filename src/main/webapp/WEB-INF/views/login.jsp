@@ -142,34 +142,15 @@ font-size: 15px;
 color: var(--blue-color);
 background: #fff;
 }
+
+#forget{
+	width:90%;
+	height:50px;
+	float:left;
+
+}
+
 </style>
-
-<script>
-<body>
-   <div class="main-container">
-   <div class="container">
-   <div>
-      <form>
-         <center><h1>USER LOGIN</h1></center>
-
-   <div class="input">
-      <input type="text" name="username" id="username" required title="Please enter your Username here" />
-      <label for="username">Username</label>
-   </div>
-
-   <div class="input">
-      <input type="password" name="password" id="password" required title="Please enter your Password here" />
-      <label for="username">Password</label>
-   </div>
-
-   <input type="submit" value="Login" class="login-btn" />
-      <a href="#">Forgot Password?</a>
-      </form>
-   </div>
-   </div>
-   </div>
-   </body>
-</script>
 
 <body>
    <div class="main-container">
@@ -177,21 +158,24 @@ background: #fff;
    <div>
    <form>
    <center>
-      <h1>LOGIN</h1>
    </center>
 
    <div class="input">
-      <input type="text" name="username" id="username" required title="Please enter your Username here" />
-         <label for="username">* I  D </label>
+      <input type="text" name="M_id" id="M_id" required title="Please enter your Username here" />
+         <label for="userName">* I  D </label>
    </div>
 
    <div class="input">
-      <input type="password" name="password" id="password" required title="Please enter your Password here" />
-         <label for="username">* Password </label>
+      <input type="password" name="M_pw" id="M_pw" required title="Please enter your Password here" />
+         <label for="userPassword">* Password </label>
       </div>
-
       <input type="submit" value="Login" class="login-btn" />
-         <a href="#">Forgot Password?</a>
+      
+      <div id="forget">
+	      <div style="float:left"><a href="${contextPath}/board/join">회원가입</a></div>
+	      <div style="float:right"><a href="#">아이디 찾기</a></div><br>
+	      <div style="float:right"><a href="#">비밀번호 찾기</a></div>   
+      </div>   
    </form>
    </div>
    </div>

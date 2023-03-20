@@ -81,23 +81,17 @@
     </div>
 	</div>
 	<div id="box3">
-		<div>
-			<div class="container-fluid position-relative p-0">
+		<!-- 로그인
+		<div style="text-align:center; margin:auto;">
 				<a href="${contextPath}/board/login"> <span>마이페이지</span></a>
-			</div>
-			<div class="container-fluid position-relative p-0">
 				<a href="${contextPath}/board/login"><span>회원정보1234</span></a>
-			</div>
-			<div class="container-fluid position-relative p-0">
 				<a href="${contextPath}/board/login"><span>로그아웃</span></a>
-			</div>
 		</div>
-		
-	<!-- 
+		-->
+	
 		<div style="text-align:right; margin:20px;">
 			<h4><a href="${contextPath}/board/login"><i class="fa fa-link"></i> <span>로그인</span></a></h4>
 		</div>
-	 -->
 	
 		
 	</div>
