@@ -13,9 +13,10 @@ public class BoardServiceImpl implements BoardService{
 	BoardDAO dao;
 	
 	@Override
-	public Map login(Map<String, Object> map) {
+	//로그인 처리를 위한 메소드
+	public jointempDTO login(jointempDTO jointempDTO) {
 		// TODO Auto-generated method stub
-		return dao.login(map);
+		return dao.login(jointempDTO);
 	}
 
 	@Override
@@ -23,6 +24,15 @@ public class BoardServiceImpl implements BoardService{
 		// TODO Auto-generated method stub
 		return dao.list();
 	}
+	
+
+	@Override
+	public List<jointempDTO> manage() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.manage();
+	}
+
+	
 
 	@Override
 	public BoardDTO detail(int bno) throws Exception {
@@ -100,6 +110,18 @@ public class BoardServiceImpl implements BoardService{
 	public List<BoardDTO> list(paging paging) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.list(paging);
+	}
+
+	@Override
+	public List<jointempDTO> manage(paging paging) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.manage(paging);
+	}
+
+	@Override
+	public int getmembercnt() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.getmembercnt();
 	}
 
 

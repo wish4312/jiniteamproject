@@ -156,17 +156,19 @@ background: #fff;
    <div class="main-container">
    <div class="container">
    <div>
-   <form>
+   <form action="userlogin" method="post">
+   <input type="hidden" value="login">
+   <table border="1">
    <center>
    </center>
 
    <div class="input">
-      <input type="text" name="M_id" id="M_id" required title="Please enter your Username here" />
+      <input type="text" name="M_ID" id="M_ID" required title="Please enter your Username here" />
          <label for="userName">* I  D </label>
    </div>
 
    <div class="input">
-      <input type="password" name="M_pw" id="M_pw" required title="Please enter your Password here" />
+      <input type="password" name="M_PW" id="M_PW" required title="Please enter your Password here" />
          <label for="userPassword">* Password </label>
       </div>
       <input type="submit" value="Login" class="login-btn" />
@@ -175,7 +177,8 @@ background: #fff;
 	      <div style="float:left"><a href="${contextPath}/board/join">회원가입</a></div>
 	      <div style="float:right"><a href="#">아이디 찾기</a></div><br>
 	      <div style="float:right"><a href="#">비밀번호 찾기</a></div>   
-      </div>   
+      </div> 
+      </table>  
    </form>
    </div>
    </div>

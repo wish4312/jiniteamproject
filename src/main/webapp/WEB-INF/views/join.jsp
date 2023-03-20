@@ -228,16 +228,17 @@ function validate(){
 
 
 <body >
-
-<div class="container-fluid bg-primary py-5 bg-header" >
-	<div class="col-2 pt-lg-2 mt-lg-2 text-center">       
-	</div>
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 60px;">
+            
+     <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+         <h1 class="display-4 text-white animated zoomIn">회원가입</h1>
+     </div>
 </div>
+
 <div id="wrap0"></div>
 <div id="box10"></div>
 <div id="box20">
  <div>
-    <div><h1>수근수근회원가입</h1></div><br><br>
    <!-- Main content -->
     <section class="content container-fluid">
       <form role="form" name="f" method="post" onsubmit="return validate();">

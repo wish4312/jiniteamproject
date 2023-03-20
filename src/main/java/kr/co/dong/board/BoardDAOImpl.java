@@ -15,9 +15,9 @@ public class BoardDAOImpl implements BoardDAO {
 	private static final String namespace = "kr.co.dong.boardMapper";
 	
 	@Override
-	public Map login(Map<String, Object> map) {
+	public jointempDTO login(jointempDTO jointempDTO) {
 		// TODO Auto-generated method stub
-		return sqlsession.selectOne(namespace + ".login", map);
+		return sqlsession.selectOne(namespace + ".login", jointempDTO);
 	}
 
 	@Override
@@ -27,11 +27,22 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 	
 	@Override
+	public List<jointempDTO> manage() throws Exception {
+		// TODO Auto-generated method stub
+		return sqlsession.selectList(namespace + ".manage");
+	}
+	
+	@Override
 	public List<BoardDTO> list(paging paging) throws Exception {
 		// TODO Auto-generated method stub
 		return sqlsession.selectList(namespace + ".list", paging);
 	}
 	
+	@Override
+	public List<jointempDTO> manage(paging paging) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlsession.selectList(namespace + ".manage", paging);
+	}
 
 	@Override
 	public BoardDTO detail(int bno) throws Exception {
@@ -110,6 +121,16 @@ public class BoardDAOImpl implements BoardDAO {
 		// TODO Auto-generated method stub
 		return sqlsession.selectOne(namespace+".getlistcnt");
 	}
+
+	@Override
+	public int getmembercnt() throws Exception {
+		// TODO Auto-generated method stub
+		return sqlsession.selectOne(namespace+".getmembercnt");
+	}
+
+	
+
+	
 
 	
 

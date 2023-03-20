@@ -3,15 +3,17 @@
     pageEncoding="UTF-8"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath }" />
 <%@ page session="false" %>
+<%@ include file="include/head.jsp" %>
+<%@ include file="include/header.jsp" %>
+<%@ include file="include/plug_in.jsp" %>
+
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
-<%@ include file="include/head.jsp" %>
-<%@ include file="include/header.jsp" %>
-
 <style>
 
 #list_wrap{
@@ -21,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 }
 
 #list_box1{
-	width:10%;
+	width:13%;
 	height:700px;
 	float:left;
 }
@@ -37,7 +39,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	background-color:red;
 	float:left;
 }
-
 
 </style>
 
@@ -101,49 +102,28 @@ desired effect
 <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 60px;">
             
      <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-         <h1 class="display-4 text-white animated zoomIn">메인게시판</h1>
+         <h1 class="display-4 text-white animated zoomIn">공지사항</h1>
      </div>
 </div>
 
 
 <!-- title end-->
 <div id="list_wrap">
-
 	<div id="list_box1"></div>
 	<div id="list_box2">
-
-<div id="list_box1"></div>
- <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 60, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="product pag"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
-    
-
-
-  
-  <div class="content-wrapper"></div>
+		
+	<%@ include file="include/list_header.jsp" %>
+	
+	
+		<br><br><br>
 		<div style="float:right;">
-				<a href="${contextPath}/board/register" class="btn btn-primary py-md-2 px-md-3 me-2 animated slideInCenter">글쓰기</a>
+			<a href="${contextPath}/board/register" class="btn btn-primary py-md-2 px-md-3 me-2 animated slideInCenter">글쓰기</a>
 		</div>
-	<br><br>
+		<br><br>
     <!-- Main content --><br>
     <section class="content container-fluid">
-		<div>${msg}</div>
 		<div class="table-responsive">
-		  <table class="table">
+		  <table class="table" style="text-align:center">
 
 			<tr>
 			<td>글번호</td>

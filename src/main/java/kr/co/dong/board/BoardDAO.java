@@ -5,6 +5,9 @@ import java.util.Map;
 
 public interface BoardDAO {
 	
+	//회원관리 처리를 위한 메소드
+	public List<jointempDTO> manage() throws Exception;
+	
 	//전체목록  처리를 위한 메소드
 	public List<BoardDTO> list() throws Exception;
 	
@@ -40,7 +43,7 @@ public interface BoardDAO {
 	
 	
 	//로그인 처리를 위한 메소드
-	public Map login(Map<String, Object> map);
+	public jointempDTO login(jointempDTO jointempDTO);
 	
 	
 	//코드
@@ -49,9 +52,15 @@ public interface BoardDAO {
 	//회원가입
 	public int jointemp(jointempDTO jointempDTO) throws Exception;
 	
-	//페이지처리
+	//게시판 페이지처리
 	public int getlistcnt() throws Exception;
+	
+	//회원관리 페이지처리
+	public int getmembercnt() throws Exception;
+	
 	//페이징
 	public List<BoardDTO> list(paging paging) throws Exception;
 	
+	//회원관리 페이징
+	public List<jointempDTO> manage(paging paging) throws Exception;
 }

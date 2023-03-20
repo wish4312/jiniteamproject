@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
-	/*
+
 	@RequestMapping(value="login/loginForm", method = RequestMethod.GET) //하이퍼링크는 get 방식으로 사용함
 	public ModelAndView loginForm() {
 		logger.info("로그인 폼 처리화면 입니다.");
@@ -76,5 +76,5 @@ public class LoginController {
 		mav.setViewName("login/result");
 		return mav;
 	}
-	*/
+
 }

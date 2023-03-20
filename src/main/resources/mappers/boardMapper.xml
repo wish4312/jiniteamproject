@@ -5,31 +5,23 @@
   
 <mapper namespace = "kr.co.dong.boardMapper">
 
-	
-	<!--  글 전체목록 
-	<select id="list" resultType="BoardDTO">
-		select * 
-		from board
-		where del = 0
-		order by bno desc
+
+		
+	<!-- 전체 회원 조회 -->
+	<select id="getmembercnt" resultType="java.lang.Integer">
+		select count(*)
+		from tb_membership
 	</select>
-	-->
 	
-	<!--  게시판 -->
-	<select id="list" parameterType="java.lang.Integer" resultType="BoardDTO">
+	<!-- 회원관리 -->
+	<select id="manage" parameterType="java.lang.Integer" resultType="jointempDTO">
 		select *
-		from TB_MSG_BOARD
-		where BD_STE = 0
-		order by BD_NUM desc
+		from tb_Membership
+		where m_ste = 1
 		limit #{startList}, #{listSize};
 	</select>
 	
-	<!--  글 읽기 -->
-	<select id="detail" parameterType="java.lang.Integer" resultType="BoardDTO">
-		select * 
-		from TB_MSG_BOARD
-		where BD_NUM = #{BD_NUM}
-	</select>
+	
 	
 	<!-- 전체 건수 조회 -->
 	<select id="getlistcnt" resultType="java.lang.Integer">
@@ -38,6 +30,42 @@
 		where BD_STE = 0
 		order by BD_NUM desc
 	</select>
+	
+	<!-- 공지 게시판 -->
+	<select id="list" parameterType="java.lang.Integer" resultType="BoardDTO">
+		select *
+		from TB_MSG_BOARD
+		where BD_STE = 0
+		and BD_GROUP = 1
+		order by BD_NUM desc
+		limit #{startList}, #{listSize};
+	</select>
+	
+	<!-- 인기 게시판-->
+	<select id="list_main" parameterType="java.lang.Integer" resultType="BoardDTO">
+		select *
+		from TB_MSG_BOARD
+		where BD_STE = 0
+		and BD_GROUP = 2 
+		order by BD_NUM desc
+		limit #{startList}, #{listSize};
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--  글 읽기 -->
+	<select id="detail" parameterType="java.lang.Integer" resultType="BoardDTO">
+		select * 
+		from TB_MSG_BOARD
+		where BD_NUM = #{BD_NUM}
+	</select>
+
 	
 	<!--  조회수 증가 -->
 	<update id="updateReadCnt" parameterType="java.lang.Integer">
@@ -69,7 +97,7 @@
 	
 	
 	<!--  로그인 처리를 위한 SQL -->
-	<select id="login" parameterType="java.util.Map" resultType="java.util.Map">
+	<select id="login" parameterType="jointempDTO" resultType="jointempDTO">
 		SELECT *
 		  FROM m_membership
 		 WHERE M_id = #{M_id}
@@ -122,8 +150,8 @@
 
 	<!-- 회원가입 -->
 	<insert id="jointemp" parameterType="jointempDTO">
-		INSERT INTO tb_membership(m_id, m_pw, m_name, m_ename, m_tel, m_birth, m_email, m_gender, m_info_yn, m_adv_yn)
-			 VALUES (#{m_id}, #{m_pw}, #{m_name}, #{m_ename}, #{m_tel}, #{m_birth}, #{m_email}, #{m_gender}, #{m_info_yn}, #{m_adv_yn})
+		INSERT INTO tb_membership(m_id, m_pw, m_name, m_ename, m_tel, m_birth, m_email, m_gender, m_info_yn, m_adv_yn, m_ste)
+			 VALUES (#{m_id}, #{m_pw}, #{m_name}, #{m_ename}, #{m_tel}, #{m_birth}, #{m_email}, #{m_gender}, #{m_info_yn}, #{m_adv_yn} ,1)
 	</insert>
 	
 </mapper>

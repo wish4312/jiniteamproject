@@ -68,14 +68,7 @@
 	        <a href="${contextPath}/board/T_List" class="nav-item nav-link">선택여행지</a>
 	        <a href="service.html" class="nav-item nav-link">전체여행지</a>
 	        <a href="${contextPath}/board/point" class="nav-item nav-link">포인트전환</a>
-	        <div class="nav-item dropdown">
-	            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">게시판</a>
-	            <div class="dropdown-menu m-0">
-	                <a href="${contextPath}/board/list" class="dropdown-item">공지사항</a>
-	                <a href="${contextPath}/board/list" class="dropdown-item">메인게시판</a>
-	                <a href="${contextPath}/board/list" class="dropdown-item">자유게시판</a>
-	            </div>
-	        </div>
+	        <a href="${contextPath}/board/list" class="nav-item nav-link">게시판</a>
        	</div>
     </nav>
     </div>
@@ -96,10 +89,23 @@
 		
 	</div>
 	
-	<div id="box4" style="text-align:right; margin:auto;">
+	<div id="box4" style="text-align:right; ">
+	
+		<div style="text-align:right; margin:auto;">
+				<a href="${contextPath}/board/Management"><span>회원관리</span></a>
+				<a href="${contextPath}/board/join"><i class="fa fa-link"></i><span>회원가입</span></a>
+		</div>
+	
+		
+		<!--
 		<div style="text-align:right; margin:19px;">
 			<h6><a href="${contextPath}/board/join"><i class="fa fa-link"></i> <span>회원가입</span></a></h6>
-		</div>	
+		</div> 
+		<div style="text-align:left; margin:19px;">
+			<h6><a href="${contextPath}/board/Management"><i class="fa fa-link"></i> <span>회원관리</span></a></h6>
+		</div>
+		
+		 -->	
 	</div>
 </div>
 
