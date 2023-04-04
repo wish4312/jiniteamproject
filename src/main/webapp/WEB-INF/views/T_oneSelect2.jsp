@@ -14,49 +14,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <body>
 
-<!-- title Start -->
-<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-          
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">선택여행지</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- title end-->
-
- <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="product pag"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
+	<div class="container-fluid bg-primary py-5 bg-header" >
+		   <div class="col-2 pt-lg-2 mt-lg-2 text-center">       
+          </div>
+	</div>
 
   
     <!-- Service Start -->
    
-                 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                 <div class="container-fluid py-9 ">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 900px;">
-                <h5 class="fw-bold text-primary text-uppercase">여행지 추천!!</h5>
+            <div class="section-title text-center position-relative pb-4 mb-5 mx-auto" style="max-width: 1400px;">
+                <h3 class="fw-bold text-primary text-uppercase">라이딩!!</h3>
                 <h1 class="mb-0">라이딩중에 좋아하는것은?</h1>
             </div>
             <div class="row g-5">
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: slideInUp;">
+                <div class="col-lg-6">
                     <div class="team-item bg-light rounded overflow-hidden">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="${contextPath}/resources/bootstrap/img/k-img12.jpg" alt="img">
+                            <img class="img-fluid w-100" style = "height : 490px" src="${contextPath}/resources/bootstrap/img/k-img12.jpg" alt="img">
                             <div class="team-social">
                                <a class="btn btn-lg btn-primary btn-lg-square rounded" title ="승마" href="${contextPath}/board/T_oneSelect2_1"><i class="bi bi-arrow-right"></i></a>
                               
@@ -65,10 +41,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       
                     </div>
                 </div>
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: slideInUp;">
+                <div class="col-lg-6">
                     <div class="team-item bg-light rounded overflow-hidden">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="${contextPath}/resources/bootstrap/img/k-img13.jpg" alt="img">
+                            <img class="img-fluid w-100" style = "height : 490px" src="${contextPath}/resources/bootstrap/img/k-img13.jpg" alt="img">
                             <div class="team-social">
                            <a class="btn btn-lg btn-primary btn-lg-square rounded" title ="4륜 바이크" href="${contextPath}/board/T_oneSelect2_2"><i class="bi bi-arrow-right"></i></a>
                             </div>

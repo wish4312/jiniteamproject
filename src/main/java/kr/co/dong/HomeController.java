@@ -44,7 +44,7 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value= "/main", method= RequestMethod.GET)
+	@RequestMapping(value= "/main", method= RequestMethod.GET) 
 	public ModelAndView main() {
 		//정보를 전송하는 model과 view 페이지를 설정하는 클래스
 		ModelAndView mav = new ModelAndView();

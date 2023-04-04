@@ -146,6 +146,11 @@ public class TourListController {
 	      
 	      return "T_twoSelect5_2";
 	   }
+	   @RequestMapping(value="board/T_ListAll", method = RequestMethod.GET)
+	   public String T_ListAll() {
+	      
+	      return "T_ListAll";
+	   }
 	   
 }
 	   

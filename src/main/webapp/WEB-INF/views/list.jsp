@@ -2,10 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath }" />
-<%@ page session="false" %>
+<%@ page session="true" %>
 <%@ include file="include/head.jsp" %>
 <%@ include file="include/header.jsp" %>
-<%@ include file="include/plug_in.jsp" %>
+
 
 
 <!DOCTYPE html>
@@ -17,27 +17,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <style>
 
 #list_wrap{
-	width:100%;
-	height:700px;
-	margin:auto; /*가운데 정렬*/
+   width:100%;
+   height:700px;
+   margin:auto; /*가운데 정렬*/
 }
 
 #list_box1{
-	width:13%;
-	height:700px;
-	float:left;
+   width:13%;
+   height:700px;
+   float:left;
 }
 #list_box2{
-	width:70%;
-	height:700px;
-	float:left;
+   width:70%;
+   height:700px;
+   float:left;
 
 }
 #list_box3{
-	width:10%;
-	height:700px;
-	background-color:red;
-	float:left;
+   width:10%;
+   height:700px;
+   background-color:red;
+   float:left;
 }
 
 </style>
@@ -45,34 +45,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <script>
 function fn_prev(page, range, rangeSize) {      
-	   var page = ((range - 2) * rangeSize) + 1;      
-	   var range = range - 1;      
-	   //var upId = document.getElementById("hidden_upId").value;
-	   var url = "${contextPath}/board/list";      
-	   url = url + "?page=" + page;      
-	   url = url + "&range=" + range;            
-	   location.href = url;   
-	}  
+      var page = ((range - 2) * rangeSize) + 1;      
+      var range = range - 1;      
+      //var upId = document.getElementById("hidden_upId").value;
+      var url = "${contextPath}/board/list";      
+      url = url + "?page=" + page;      
+      url = url + "&range=" + range;            
+      location.href = url;   
+   }  
 
-	//페이지 번호 클릭   
-	function fn_pagination(page, range, rangeSize, searchType, keyword) {   
-	   //var upId = document.getElementById("hidden_upId").value;
-	   var url = "${contextPath}/board/list";         
-	   url = url + "?page=" + page;      
-	   url = url + "&range=" + range;      
-	   location.href = url;      
-	}   
+   //페이지 번호 클릭   
+   function fn_pagination(page, range, rangeSize, searchType, keyword) {   
+      //var upId = document.getElementById("hidden_upId").value;
+      var url = "${contextPath}/board/list";         
+      url = url + "?page=" + page;      
+      url = url + "&range=" + range;      
+      location.href = url;      
+   }   
 
-	//다음 버튼 이벤트   
-	function fn_next(page, range, rangeSize) {      
-	   var page = parseInt((range * rangeSize)) + 1;      
-	   var range = parseInt(range) + 1;      
-	   //var upId = document.getElementById("hidden_upId").value;
-	   var url = "${contextPath}/board/list";         
-	   url = url + "?page=" + page;      
-	   url = url + "&range=" + range;            
-	   location.href = url;   
-	}
+   //다음 버튼 이벤트   
+   function fn_next(page, range, rangeSize) {      
+      var page = parseInt((range * rangeSize)) + 1;      
+      var range = parseInt(range) + 1;      
+      //var upId = document.getElementById("hidden_upId").value;
+      var url = "${contextPath}/board/list";         
+      url = url + "?page=" + page;      
+      url = url + "&range=" + range;            
+      location.href = url;   
+   }
 </script>
 
 <!--
@@ -99,52 +99,65 @@ desired effect
 <div>
 
 <!-- title Start -->
-<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 60px;">
-            
-     <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-         <h1 class="display-4 text-white animated zoomIn">공지사항</h1>
-     </div>
-</div>
-
-
+   <div class="container-fluid bg-primary py-5 bg-header" >
+         <div class="col-2 pt-lg-2 mt-lg-2 text-center">       
+          </div>
+   </div>
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" >
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width:500px;text-align:left;" >
+                <h1 class="mb-0">공 지 사 항</h1>
+            </div>
+   </div>
 <!-- title end-->
+
+
 <div id="list_wrap">
-	<div id="list_box1"></div>
-	<div id="list_box2">
-		
-	<%@ include file="include/list_header.jsp" %>
-	
-	
-		<br><br><br>
-		<div style="float:right;">
-			<a href="${contextPath}/board/register" class="btn btn-primary py-md-2 px-md-3 me-2 animated slideInCenter">글쓰기</a>
-		</div>
-		<br><br>
+   <div id="list_box1"></div>
+   <div id="list_box2">
+      
+   <%@ include file="include/list_header.jsp" %>
+   
+   
+      <br><br><br>
+      <div style="float:right;">
+      
+      <c:if test="${user==null }">
+        </c:if>   
+      <c:if test="${user!=null }">
+         <c:if test="${user.m_ste ==9}">
+            <a href="${contextPath}/board/register" class="btn btn-primary py-md-2 px-md-3 me-2 animated slideInCenter">글쓰기</a>
+         </c:if>   
+      </c:if>
+      
+      </div>
+      <br><br>
     <!-- Main content --><br>
     <section class="content container-fluid">
-		<div class="table-responsive">
-		  <table class="table" style="text-align:center">
-
-			<tr>
-			<td>글번호</td>
-			<td>제목</td>
-			<td>작성일</td>
-			<td>작성자</td>
-			<td>조회수</td>
-			</tr>
-			
-			<c:forEach var="board" items="${list}">
-				<tr>
-		          <td>${board.BD_NUM}</td>
-		          <td><a href="detail?BD_NUM=${board.BD_NUM}"> ${board.BD_TL} </a></td>
-		          <td>${board.BD_DT}</td>
-		          <td>${board.M_ID}</td>
-		          <td><span class="badge">${board.B_REF}</span></td>
-	          </tr>
-      		</c:forEach>
-		  </table>
-		</div>
-		<!-- pagination{s} -->   
+      <div class="table-responsive">
+        <table class="table" style="text-align:center">
+         <tr>
+            <td><h6>글번호</h6></td>
+            <td><h6>제목</h6></td>
+            <td><h6>작성자</h6></td>
+            <td><h6>작성일</h6></td>
+            <td><h6>조회수</h6></td>
+            <td><h6>추천수</h6></td>      
+         </tr>
+         
+         <c:forEach var="board" items="${list}">
+            <tr>
+                <td>${board.bd_num}</td>
+                <td><a href="detail?bd_num=${board.bd_num}"> ${board.bd_tl} </a></td>
+                <td>${board.m_ename}</td>
+                <td>${board.bd_dt}</td>
+                <td>${board.bd_ref}</td>
+                <td>${board.bd_recomm}</td>
+             </tr>
+            </c:forEach>
+            
+        </table>
+      </div>
+      <!-- pagination{s} -->   
          <div id="paginationBox">      
           <ul class="pagination">         
            <c:if test="${pagination.prev}">            

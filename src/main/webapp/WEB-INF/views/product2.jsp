@@ -13,16 +13,10 @@
 
 
 <body>
- <!-- title Start -->
-<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-         
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h3 class="display-4 text-white animated zoomIn">포인트전환 상품신청</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- title end-->
+ 	<div class="container-fluid bg-primary py-5 bg-header" >
+		   <div class="col-2 pt-lg-2 mt-lg-2 text-center">       
+          </div>
+	</div>
     
 
  <body>
@@ -58,17 +52,23 @@
                          </div>
                             <img class="img-fluid w-100" src="${contextPath}/resources/bootstrap/img/product2.png" alt="" style="width:500px; height:500px;">                                        
                 </div>
+          <section class="content container-fluid">
+      		<form role="form" name="f" method="post" onsubmit="return validate();">
                 <div class="col-lg-6">
                     <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
                         <form class="form-group">
                             <div class="row g-3">
+                            <div>
+                             <label style="color:black">◎ 상품 코드　  :　</label>
+                        <input type="text" id="p_cd" name="p_cd" value="p1" style="width:22%;color:black;margin-left:45px;text-align:center;background-color:#CEECF5;border:none;"readonly>
+                      </div>
                             <div>
                              <label style="color:black">◎ 보유 포인트　  :　</label>
                         <input type="text" name="point" style="width:22%;color:black;margin-left:30px;text-align:right;">
                       </div>
                       <div>
                              <label style="color:black">◎ 사용 포인트　  :　</label>
-                        <input type="text" name="point" style="width:22%;color:red;margin-left:30px;text-align:right;" value="-1,000p" readonly>
+                        <input type="text" name="point" style="width:22%;color:red;margin-left:30px;text-align:right;background-color:#CEECF5;border:none;" value="-1,000p" readonly>
                       </div>
                       <div>
                               <label style="color:black">◎ 차감후 포인트 : </label>
@@ -108,10 +108,10 @@
                                     </textarea>
                                 </div>
                                 <div class="col-12">
-                                   <input type="checkbox" name='checkbox1' value='확인사항 동의' /> 해당 필수확인 내용을 확인하였습니다.                                   
+                                   <input type="checkbox" name='checkbox1' value='확인사항 동의' />(필수) 해당 필수확인 내용을 확인하였습니다.                                   
                                 </div>
                                 <div class="col-12">
-                                   <input type="checkbox" name='checkbox2' value='이름,휴대전화 확인' />이름과 휴대전화 번호를 확인하였습니다.
+                                   <input type="checkbox" name='checkbox2' value='이름,휴대전화 확인' />(필수) 이름과 휴대전화 번호를 확인하였습니다.
                                 </div>                                       
                                 <div class="col-12">
                                     <button class="btn btn-dark w-100 py-3" type="submit"> 포인트 전환 신청하기</button>
@@ -120,6 +120,8 @@
                         </form>
                     </div>
                 </div>
+                </form>
+                </section>
             </div>
         </div>
     </div>

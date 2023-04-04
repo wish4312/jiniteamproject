@@ -18,25 +18,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <style type="text/css">
 
 #wrap0{
-	width:100%;
-	height:104px;
-	margin:auto; /*가운데 정렬*/
+   width:100%;
+   height:104px;
+   margin:auto; /*가운데 정렬*/
 }
 #box10{
-	width:40%;
-	height:800px;
-	float:left;
+   width:33%;
+   height:800px;
+   float:left;
 }
 #box20{
-	width:50%;
-	height:800px;
-	float:left;
+   width:50%;
+   height:800px;
+   float:left;
+   
 
 }
 #box30{
-	width:10%;
-	height:800px;
-	float:left;
+   width:10%;
+   height:800px;
+   float:left;
 }
 </style>
 
@@ -228,14 +229,18 @@ function validate(){
 
 
 <body >
-<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 60px;">
-            
-     <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-         <h1 class="display-4 text-white animated zoomIn">회원가입</h1>
-     </div>
-</div>
 
-<div id="wrap0"></div>
+   <div class="container-fluid bg-primary py-5 bg-header" >
+         <div class="col-2 pt-lg-2 mt-lg-2 text-center">       
+          </div>
+   </div>
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" >
+            <div class="section-title text-center position-relative pb-3 mb-1 mx-auto" style="max-width:500px;text-align:left;" >
+                <h1 class="mb-0">회 원 가 입</h1>
+            </div>
+   </div>
+<!-- title end-->
+
 <div id="box10"></div>
 <div id="box20">
  <div>
@@ -243,72 +248,75 @@ function validate(){
     <section class="content container-fluid">
       <form role="form" name="f" method="post" onsubmit="return validate();">
          <div class="box-body">
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;">
+               <div class="service-item bg-light rounded d-flex flex-column align-items-left justify-content-center" style="width:580;height:850;">
+         
             <!-- 아이디 -->
             <div class="box-group"> 
                <label>아이디　　　　</label>
-               <input type='text' id='m_id' name='m_id' onclick="id_click();" minlength="8" maxlength="15" style="width:130px" >
+               <input type='text' id='m_id' name='m_id' onclick="id_click();" minlength="8" maxlength="15" style="width:130px;border:none;" >
                <input type='hidden' id='idcheckNum' name='idcheckNum' value='1'>
-               <button type="button" class="btn btn-idcheck">중복확인</button>
-               <input type='hidden' id='idcheck1' name='idcheck1' class="form-control" value="중복확인을 하십시오." style="color:red; width:300px;">
-               <input type='hidden' id='idcheck2' name='idcheck2' class="form-control" value="중복확인이 완료되었습니다." style="color:green; width:300px;" >
-               <input type='hidden' id='idcheck3' name='idcheck3' class="form-control" value="잘못된 아이디 형식입니다." style="color:red; width:300px;">      
+               <button type="button" class="btn btn-idcheck" style="background-color:#99c2ff;color:White;height:28px;font-size:0.9em;padding-top:3.5px;">중복확인</button>
+               <input type='hidden' id='idcheck1' name='idcheck1' class="form-control" value="중복확인을 하십시오." style="color:red; width:200px;height:28px;border:none;font-size:0.8em;text-align:center">
+               <input type='hidden' id='idcheck2' name='idcheck2' class="form-control" value="중복확인이 완료되었습니다." style="color:green; width:200px;height:28px;border:none;font-size:0.8em;text-align:center">
+               <input type='hidden' id='idcheck3' name='idcheck3' class="form-control" value="잘못된 아이디 형식입니다." style="color:red; width:200px;height:28px;border:none;font-size:0.8em;text-align:center">      
             </div>
          
             <!-- 비밀번호 --><br>
             <div class="box-group">
                <label>비밀번호　　　</label>
-               <input type='password' id='m_pw' name='m_pw' onclick="pass_click();">
+               <input type='password' id='m_pw' name='m_pw' onclick="pass_click();" style="border:none;">
             </div>
             <div class="box-group">
                <br><label>비밀번호확인　</label>
-               <input type='password' id='password2' name='password2' onclick="pass_click();">
+               <input type='password' id='password2' name='password2' onclick="pass_click();" style="border:none;">
                <font name="passcheck" size="2"></font>
             </div>
 
             <!-- 닉네임 -->
             <br><div class="box-group">
                <label>닉네임　　　　</label>
-               <input type='text' id='m_ename' name='m_ename' onclick="ename_click();" maxlength="15" style="width:130px" >
+               <input type='text' id='m_ename' name='m_ename' onclick="ename_click();" maxlength="15" style="width:130px;border:none;" >
                <input type='hidden' id='enamecheckNum' name='enamecheckNum' value='1'>
-               <button type="button" class="btn btn-enamecheck">중복확인</button>
-               <input type='hidden' id='enamecheck1' name='enamecheck1' class="form-control" value="중복확인을 하십시오." style="color:red; width:200px;">
-               <input type='hidden' id='enamecheck2' name='enamecheck2' class="form-control" value="중복확인이 완료되었습니다." style="color:green; width:200px;" >
-               <input type='hidden' id='enamecheck3' name='enamecheck3' class="form-control" value="잘못된 아이디 형식입니다." style="color:red; width:200px;">      
+               <button type="button" class="btn btn-enamecheck" style="background-color:#99c2ff;color:White;height:28px;font-size:0.9em;padding-top:3.5px;">중복확인</button>
+               <input type='hidden' id='enamecheck1' name='enamecheck1' class="form-control" value="중복확인을 하십시오." style="color:red; width:200px;height:28px;border:none;font-size:0.8em;text-align:center">
+               <input type='hidden' id='enamecheck2' name='enamecheck2' class="form-control" value="중복확인이 완료되었습니다." style="color:green; width:200px;height:28px;border:none;font-size:0.8em;text-align:center" >
+               <input type='hidden' id='enamecheck3' name='enamecheck3' class="form-control" value="잘못된 아이디 형식입니다." style="color:red; width:200px;height:28px;border:none;font-size:0.8em;text-align:center">      
             </div>
                         
             <!-- 이름 --><br>
             <div class="box-group">
                <label>이름　　　　　</label>
-               <input type='text' id='m_name' name='m_name' onclick="name_click();" style="width:130px">
+               <input type='text' id='m_name' name='m_name' onclick="name_click();" style="width:130px;border:none;">
             </div>
             
             <!-- 핸드폰번호 --><br>
             <div class="box-group">
                <label>핸드폰번호　　</label>
-               <select id='tel1' name='tel1' style="width:70px; height:32;">
+               <select id='tel1' name='tel1' style="width:70px; height:32;border:none;">
                   <option value="010">010</option>
                   <option value="011">011</option>
                   <option value="016">016</option>
                   <option value="017">017</option>
                   <option value="019">019</option>
                </select> - 
-               <input type='text' id='tel2' name='tel2' minlength="3" maxlength="4" style="width:70px; height:28;"> - 
-               <input type='text' id='tel3' name='tel3' minlength="4" maxlength="4" style="width:70px; height:28;">
+               <input type='text' id='tel2' name='tel2' minlength="3" maxlength="4" style="width:70px; height:28;border:none;"> - 
+               <input type='text' id='tel3' name='tel3' minlength="4" maxlength="4" style="width:70px; height:28;border:none;">
                <input type='hidden' id='m_tel' name='m_tel'>
             </div>
             <!-- 생년월일 --><br>
             <div class="box-group">
                <label>주민등록번호　</label>
-               <input type="text" id="m_birth" name="m_birth" minlength="6" maxlength="6" style="width:150px; height:28;"> - 
-               <input type="text" id="m_gender" name="m_gender" minlength="1" maxlength="1" style="width:30px; height:28;">******
+               <input type="text" id="m_birth" name="m_birth" minlength="6" maxlength="6" style="width:150px; height:28;border:none;"> - 
+               <input type="text" id="m_gender" name="m_gender" minlength="1" maxlength="1" style="width:30px; height:28;border:none;">******
             </div>
             <!-- 이메일 --><br>
             <div class="box-group">
                <label>이메일　　　　</label>
-               <input type="text" id="email1" name="email1" style="width:120px; height:32;"> @ 
-               <input type="text" id="email2" name="email2" style="width:120px; height:32;">
-               <select id='email3' name='email3' onchange="email_select();" style="width:120px; height:32;">
-                  <option value="">직접입력</option>
+               <input type="text" id="email1" name="email1" style="width:120px; height:32;border:none;"> @ 
+               <input type="text" id="email2" name="email2" style="width:120px; height:32;border:none;">
+               <select id='email3' name='email3' onchange="email_select();" style="width:120px; height:32;border:none;">
+                  <option value="" style="border:none;">직접입력</option>
                   <option value="gmail.com">gmail.com</option>
                   <option value="naver.com">naver.com</option>
                   <option value="daum.net">daum.net</option>
@@ -319,22 +327,35 @@ function validate(){
             <!-- 개인정보 공유에 대한 약관 --><br>
             <div class="box-group">
                <label>개인정보 약관 동의(필수)</label><br>
-               <textarea id="info" name="info" rows="3" style="width:400px" value="안녕하세요" readonly></textarea>
-               <br><input type="radio" id="m_info_yn" name="m_info_yn" value="1" checked="checked">동의　
-               <input type="radio" id="m_info_yn" name="m_info_yn" value="2">거부
+               <textarea id="info" name="info" rows="3" style="width:520px;border:none;font-size:0.8em;" readonly >
+* 개인정보 수집, 이용동의 *
+- 해당 사이트에 서비스 회원가입, 고객상담 및 고지사항 전달 등을 위해 아래와 같이 개인정보 수집,이용합니다.
+- 수집 목적 : 회원 식별 및 회원제 서비스 제공, 고객 상담 및 관리, 서비스 변경사항 및 고지사항 전달
+- 수집 항목 : 아이디, 비밀번호, 전화번호, 이메일, 생년월일
+- 수집 근거 : 개인정보 보호법 제 15조 제1항
+* 귀하의 해당 사이트의 서비스 이용에 필요한 최소한의 개인정보 수집,이용에 동의하지 않을 수 있으나, 동의를 거부 할 경우 회원제 서비스 이용이 불가합니다.</textarea>
+               <br><input type="radio" id="m_info_yn" name="m_info_yn" value="1">동의　
+               <input type="radio" id="m_info_yn" name="m_info_yn" value="2" checked="checked">거부
             </div>
             <!-- 광고 수신 여부에 대한 약관(선택) --><br>
             <div class="box-group">
                <label>광고수신 약관 동의(선택)</label><br>
-               <textarea id="adv" name="adv" rows="3" style="width:350px" value="안녕하세요" readonly></textarea>
-               <br><input type="radio" id="m_adv_yn" name="m_adv_yn" value="1" checked="checked">동의　
-               <input type="radio" id="m_adv_yn" name="m_adv_yn" value="2">거부
+               <textarea id="adv" name="adv" rows="3" style="width:520px;border:none;font-size:0.8em;" readonly>
+* 홍보 및 마케팅에 관한 동의 *
+- 해당 사이트에 "개인정보 보호법"에 따라 동의를 얻어 아래와 같이 서비스의 홍보및 마케팅을 위한 개인정보를 수집,이용합니다.
+- 수집 목적 : 웹 매거진 발송(월 1회)/SMS를 통한 이벤트 참여 기회 제공
+- 수집 항목(보유기간) : 이메일(수집일로부터 1년)/ 휴대전화번호(수집일로부터 6개월)
+*귀하의 개인정보 수집,이용에 동의하지 않을 권리가 있으며, 동의를 거부할 경우에는 내용 관련 서비스를 받을 수 없습니다.</textarea>
+               <br><input type="radio" id="m_adv_yn" name="m_adv_yn" value="1">동의　
+               <input type="radio" id="m_adv_yn" name="m_adv_yn" value="2" checked="checked">거부
             </div><br>
-            <div class="box-footer">
-               <button type="submit" class="btn btn-primary">확인</button>
-               <button type="button" class="btn btn-primary">취소</button>
+            <div class="box-footer">           
+               <button type="submit" class="btn btn-primary" style="margin: 20px 10px 1px 173px;padding-top:3px;width:70px;height:28px;">확인</button>
+               <button type="button" class="btn btn-primary" style="margin: 20px 10px 1px 2px;padding-top:3px;width:70px;height:28px;" onclick="location.href='${contextPath}/board/login'">취소</button>
             </div>
+          </div>
          </div>
+        </div>
       </form>
 
     </section>

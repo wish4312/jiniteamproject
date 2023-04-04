@@ -29,29 +29,8 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body>
 <div class="wrapper">
-
-  <!-- Main Header -->
-  
-  <%@ include file="include/main_header.jsp" %>
-  
-  <!-- Left side column. contains the logo and sidebar -->
-
-  <%@ include file="include/left_column.jsp" %>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
 
     <!-- Main content -->
     <section class="content container-fluid">
@@ -62,18 +41,19 @@ desired effect
 		<form role="form" method="post">
 			<div class="box-body">
 				<div class="form-group">
-					<label>작성자</label> <input type="text"
-						name='rewriter' value ="${boardReply.rewriter }" class="form-control" placeholder="입력하세요">
+					<label>작성자</label> <input type="hidden"
+						name='rewriter' value ="${boardReply.m_id}" class="form-control" placeholder="입력하세요">
 				</div>
 				<div class="form-group">
-					<textarea class="form-control" name="rememo" rows="3"
-						placeholder="댓글을 수정하세요">${boardReply.rememo }</textarea>
+					<textarea class="form-control" name="comm_con" rows="3"
+						placeholder="댓글을 수정하세요">${boardReply.comm_con}</textarea>
 				</div>
-				<input type="hidden" name="bno" value="${boardReply.bno }" />
+				<input type="hidden" name="bd_num" value="${boardReply.bd_num}" />
+				<input type="hidden" name="comm_num" value="${boardReply.comm_num}" />
 				<div class="form-group">
 					<label>작성일자</label>
 					<input type="text" name="redate" class="form-control"
-					 readonly="readonly" value="${boardReply.redate }">
+					 readonly="readonly" value="${boardReply.comm_dt}">
 				</div>
 			</div>
 	

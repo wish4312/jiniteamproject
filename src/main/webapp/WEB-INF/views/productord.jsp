@@ -10,16 +10,10 @@
 <html lang="en">
 
 <body>
- <!-- title Start -->
-<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-         
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h3 class="display-4 text-white animated zoomIn">포인트전환</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- title end-->
+	<div class="container-fluid bg-primary py-5 bg-header" >
+		   <div class="col-2 pt-lg-2 mt-lg-2 text-center">       
+          </div>
+	</div>
     
 
  <body>

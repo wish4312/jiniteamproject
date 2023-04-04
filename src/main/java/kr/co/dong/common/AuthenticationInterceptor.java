@@ -19,7 +19,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
       if(session.getAttribute("user") == null) {
          // 세션이 없으면 통과 못함 -> 로그인 써 줘야 한다는 거 
             // ▶ 로그인 안 되어 있으니까 로그인 창으로 이동시킴!
-         response.sendRedirect(request.getContextPath() + "board/login");
+         response.sendRedirect(request.getContextPath() + "/board/login");
                               // ▶ 내용 경로를 가져오는 게터
          return false;
       }

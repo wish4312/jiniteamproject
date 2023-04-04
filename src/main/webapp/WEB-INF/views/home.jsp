@@ -3,6 +3,9 @@
     pageEncoding="UTF-8"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath }" />
 <%@ page session="true" %>
+<%@ include file="include/head.jsp" %>
+<%@ include file="include/header.jsp" %>
+
 
 <!DOCTYPE html>
 <!--
@@ -10,16 +13,18 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
-<script>
+<style>
+	#home1{
+	width:100%;
+	height:100%;
+	}
 
+	#home2{
+	width:100%;
+	height:340px;
+	}
 
-
-
-</script>
-
-<%@ include file="include/head.jsp" %>
-<%@ include file="include/header.jsp" %>
-
+</style>
 
 <body>
 	<div class="container-fluid bg-primary py-5 bg-header" >
@@ -35,11 +40,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
    
 
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div id="home1">
                 <div class="carousel-item active">
                     <img class="w-100" src="${contextPath}/resources/bootstrap/img/gyeongbokgung.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
+                    <div class="carousel-caption d-flex flex-column align-items-center">
+                        <div id="home2"></div>
+                        <div class="p-3" style="max-width: 900px; max-height: 500px;">
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To Go Travel</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">#골라골라#여행지#지금#어디갈래?</h1>
                             <a href="${contextPath}/board/T_List" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">START</a>
@@ -48,11 +54,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <div class="carousel-item">
                     <img class="w-100" src="${contextPath}/resources/bootstrap/img/seoul_city.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
+                    <div class="carousel-caption d-flex flex-column align-items-center">
+                    	<div id="home2"></div>
+                        <div class="p-3" style="max-width: 900px; max-height: 500px;">
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To Go Travel</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">#음..#어디보자#여행지#일단봐볼까?</h1>
-                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">살펴보러가기</a>
+                            <a href="${contextPath}/board/T_ListAll" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">살펴보러가기</a>
                         </div>
                     </div>
                 </div>
@@ -99,7 +106,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
     <script src="${contextPath}/resources/bootstrap/lib/easing/easing.min.js"></script>
     <script src="${contextPath}/resources/bootstrap/lib/waypoints/waypoints.min.js"></script>
     <script src="${contextPath}/resources/bootstrap/lib/counterup/counterup.min.js"></script>
@@ -109,6 +115,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="${contextPath}/resources/bootstrap/js/main.js"></script>
 </body>
 
-<%@ include file="include/footer.jsp" %>
 
 </html>

@@ -7,27 +7,86 @@
 <%@ include file="include/header.jsp" %>
 
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html >
+
 
 <script>
 
-</script>
+   function validation(){
+      
+      var exptextTel = /^01[016789]+/;
+      var tel1 = document.getElementById("tel1").value;
+      var tel2 = document.getElementById("tel2").value;
+      var tel3 = document.getElementById("tel3").value;
+      $('input[name=p_tel]').attr('value',tel1+"-"+tel2+"-"+tel3);
+      var tel = document.getElementById("p_tel").value;
+      
+      
+      var point1 = document.getElementById("point1").value;
+      var point2 = document.getElementById("point2").value;
+      var pt = document.getElementById("m_pt").value;
+      var name = document.getElementById("p_name").value;
+      
+      // 전화번호
+       if(tel.length < 14 && tel.length >11){
+           if(exptextTel.test(tel)==false){
+              alert("전화번호를 확인하세요.");
+              document.getElementById("p_tel").focus();
+              return false;
+           } 
+       } else {
+    	   alert("전화번호를 확인하세요.");
+       }
+       
+      // 보유 포인트
+       if(point1 < 1000){
+           alert("포인트가 부족합니다.");
+           return false;
+        } else {
+        	pt = point1 - 1000;
+        	$('input[name=m_pt]').attr('value', pt);
+        } 
+      
+      
+       // 이름
+        if(name == ""){
+           alert("이름을 확인하세요.");
+           return false;
+        }
+        
+       // 첫번째 체크박스가 체크되어 있는경우
+       if($("#p_info_yn").is(":checked")){
+           //alert("첫번째 통과");        
+       } else { // 첫번째 체크박스가 체크 되어있지 않은 있는경우
+           alert("체크 항목을 확인해주세요.");
+           return false;
+       }     
+       
+       // 두번째 체크박스가 체크되어 있는경우
+       if($("#p_adv_yn").is(":checked")){
+           //alert("두번째 통과");
+       } else { // 두번째 체크박스가 체크 되어있지 않은 있는경우
+           alert("체크 항목을 확인해주세요.");
+           return false;
+       }
+       
+       alert(pt);
+       alert("포인트 전환이 완료되었습니다.");
+       return true;                
 
-<body>
- <!-- title Start -->
-<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-         
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h3 class="display-4 text-white animated zoomIn">포인트전환 상품신청</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- title end-->
+   }
     
-
+ </script>
+    
  <body>
+ 
+    <div class="container-fluid bg-primary py-5 bg-header" >
+         <div class="col-2 pt-lg-2 mt-lg-2 text-center">       
+          </div>
+   </div>
+    
 
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
@@ -49,6 +108,7 @@
 
 
     <!-- Quote Start -->
+   <form role="form" name="point check" method="post" onsubmit="return validation();">
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -61,41 +121,48 @@
                             <img class="img-fluid w-100" src="${contextPath}/resources/bootstrap/img/product1.png" alt="" style="width:500px; height:500px;">                                        
                 </div>
                 <div class="col-lg-6">
-                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-                        <form class="form-group">
+                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">                    
+
                             <div class="row g-3">
                             <div>
+                        <input type="hidden" id="p_cd" name="p_cd" value="p1" style="width:22%;"readonly>
+                        <input type="hidden" id="p_condition" name="p_condition" value="1" style="width:22%;"readonly>
+                        <input type="hidden" id="m_ename" name="m_ename" value="${user.m_ename}" style="width:22%;"readonly>
+                        <input type="hidden" id="p_cd_name" name="p_cd_name" value="신게계 모마일 교환권 1,000p" style="width:22%;"readonly>                       
+                      </div>
+                            <div>
                              <label style="color:black">◎ 보유 포인트　  :　</label>
-                        <input type="text" name="point" style="width:22%;color:black;margin-left:30px;text-align:right;">
+                        <input type="text" id="point1" name="point1" value="${user.m_pt}" style="width:22%;color:black;margin-left:30px;text-align:right;border:none;">
                       </div>
                       <div>
                              <label style="color:black">◎ 사용 포인트　  :　</label>
-                        <input type="text" name="point" style="width:22%;color:red;margin-left:30px;text-align:right;" value="-1,000p" readonly>
+                        <input type="text" id="point2" name="point2" style="width:22%;color:red;margin-left:30px;text-align:right;background-color:#CEECF5;border:none;" value="-1,000p" readonly>
                       </div>
                       <div>
                               <label style="color:black">◎ 차감후 포인트 : </label>
-                        <input type="text" name="point" style="width:22%;color:black;margin-left:45px;text-align:right;">
+                        <input type="text" id="m_pt" name="m_pt" value="0" style="width:22%;color:black;margin-left:45px;text-align:right;border:none;">
+                        
                       </div>               
                      
                                 <div class="col-xl-12">
                                     <label style="color:black">◎ 이  름            　:　</label>
-                              <input type="text" name="point" style="width:22%;color:black;margin-left:75px;text-align:right;" >
+                              <input type="text" id="p_name" name="p_name" value="" style="width:22%;color:black;margin-left:75px;text-align:right;border:none;" minlength="2" >
                                 </div>
                                 
                                 <div class="col-12">
                       
                            <div class="box-group">
-                              <label style="color:black">◎ 핸드폰번호　:　</label>
-                              <select id='tel1' name='tel1' style="width:70px; height:32;margin-left:36px;">
+                              <label style="color:black;border:none;">◎ 핸드폰번호　:　</label>
+                              <select id='tel1' name='tel1' style="width:70px; height:32;margin-left:36px;border:none;">
                                  <option value="010">010</option>
                                  <option value="011">011</option>
                                  <option value="016">016</option>
                                  <option value="017">017</option>
                                  <option value="019">019</option>
                               </select> - 
-                              <input type='text' id='tel2' name='tel2' minlength="3" maxlength="4" style="width:70px; height:28;"> - 
-                              <input type='text' id='tel3' name='tel3' minlength="4" maxlength="4" style="width:70px; height:28;">
-                              <input type='hidden' id='m_tel' name='m_tel'>
+                              <input type='text' id='tel2' name='tel2' minlength="3" maxlength="4" style="width:70px; height:28;border:none;"> - 
+                              <input type='text' id='tel3' name='tel3' minlength="4" maxlength="4" style="width:70px; height:28;border:none;">
+                              <input type='hidden' id='p_tel' name='p_tel'>
                            </div>
                            </div>
                                 <div class="col-12">
@@ -110,21 +177,22 @@
                                     </textarea>
                                 </div>
                                 <div class="col-12">
-                                   <input type="checkbox" id="checkbox1" name='checkbox1' value='확인사항 동의' onclick=checkbox_click();> 해당 필수확인 내용을 확인하였습니다.                                   
+                                   <input type="checkbox" id="p_info_yn" name='p_info_yn' value='1' onclick=checkbox_click();>(필수) 해당 필수확인 내용을 확인하였습니다.</>
+                                                                     
                                 </div>
                                 <div class="col-12">
-                                   <input type="checkbox" id="checkbox2" name='checkbox2' value='이름,휴대전화 확인' onclick=checkbox_click();>이름과 휴대전화 번호를 확인하였습니다.
+                                   <input type="checkbox" id="p_adv_yn" name='p_adv_yn' value='1' onclick=checkbox_click();>(필수) 이름과 휴대전화 번호를 확인하였습니다.</>
                                 </div>                                       
-                                <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-2" type="submit"> 포인트 전환 신청하기</button>
+                                <div class="box-footer">                                
+                                    <button type="submit" class="btn btn-dark w-100 py-2"> 포인트 전환 신청하기</button>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+   </form>
     <!-- Quote End -->
 
    <!-- Team Start -->
@@ -187,6 +255,7 @@
 
     <!-- Template Javascript -->
     <script src="${contextPath}/resources/bootstrap/js/main.js"></script>
+
 </body>
 
 </html>

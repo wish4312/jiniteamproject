@@ -10,16 +10,10 @@
 <html lang="en">
 
 <body>
- <!-- title Start -->
-<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-         
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h3 class="display-4 text-white animated zoomIn">포인트전환 상품신청</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- title end-->
+	<div class="container-fluid bg-primary py-5 bg-header" >
+		   <div class="col-2 pt-lg-2 mt-lg-2 text-center">       
+          </div>
+	</div>
     
 
  <body>
@@ -105,13 +99,13 @@
                                     </textarea>
                                 </div>
                                 <div class="col-12">
-                                   <input type="checkbox" name='checkbox1' value='확인사항 동의' /> 해당 필수확인 내용을 확인하였습니다.                                   
+                                   <input type="checkbox" name='checkbox1' value='확인사항 동의' />(필수) 해당 필수확인 내용을 확인하였습니다.                                   
                                 </div>
                                 <div class="col-12">
-                                   <input type="checkbox" name='checkbox2' value='이름,휴대전화 확인' />이름과 휴대전화 번호를 확인하였습니다.
+                                   <input type="checkbox" name='checkbox2' value='이름,휴대전화 확인' />(필수) 이름과 휴대전화 번호를 확인하였습니다.
                                 </div>                                       
                                 <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit"> 포인트 전환 신청하기</button>
+                                    <button class="btn btn-dark w-100 py-3" type="submit"> 포인트 전환 신청하기</button>                                 
                                 </div>
                             </div>
                         </form>

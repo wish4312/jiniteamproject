@@ -4,7 +4,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath }" />
 <head >
     <meta charset="utf-8">
-    <title>Insert title here</title>
+    <title>수근수근어때?</title>
 
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="Free HTML Templates" name="keywords">

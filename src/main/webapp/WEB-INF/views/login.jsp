@@ -13,16 +13,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 
-<!-- title Start -->
-<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-            
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">로그인</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- title end-->
 
 <style type="text/css">
 
@@ -144,39 +134,55 @@ background: #fff;
 }
 
 #forget{
-	width:90%;
-	height:50px;
-	float:left;
+   width:90%;
+   height:50px;
+   float:left;
 
 }
 
 </style>
 
+
+
+
 <body>
+
+<!-- title Start -->
+   <div class="container-fluid bg-primary py-5 bg-header" >
+         <div class="col-2 pt-lg-2 mt-lg-2 text-center">       
+          </div>
+   </div>
+   
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" >
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width:500px;text-align:left;" >
+                <h1 class="mb-0">로 그 인</h1>
+            </div>
+   </div>
+<!-- title end-->
+
    <div class="main-container">
    <div class="container">
    <div>
-   <form action="userlogin" method="post">
+   <form action="login" method="post">
    <input type="hidden" value="login">
    <table border="1">
    <center>
    </center>
 
    <div class="input">
-      <input type="text" name="M_ID" id="M_ID" required title="Please enter your Username here" />
+      <input type="text" name="m_id" id="m_id" required title="Please enter your Username here" />
          <label for="userName">* I  D </label>
    </div>
 
    <div class="input">
-      <input type="password" name="M_PW" id="M_PW" required title="Please enter your Password here" />
+      <input type="password" name="m_pw" id="m_pw" required title="Please enter your Password here" />
          <label for="userPassword">* Password </label>
       </div>
       <input type="submit" value="Login" class="login-btn" />
-      
       <div id="forget">
-	      <div style="float:left"><a href="${contextPath}/board/join">회원가입</a></div>
-	      <div style="float:right"><a href="#">아이디 찾기</a></div><br>
-	      <div style="float:right"><a href="#">비밀번호 찾기</a></div>   
+         <a href="${contextPath}/board/join" style="margin-left:27px;">회원가입 |</a>
+         <a href="${contextPath}/board/findId">아이디 찾기 |</a>
+         <a href="${contextPath}/board/findPw">비밀번호 찾기</a>   
       </div> 
       </table>  
    </form>

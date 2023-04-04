@@ -8,26 +8,30 @@
    <div class="form-group1">
    <c:forEach var="boardreply" items="${list}">
       <tr>
-         <td>작성자 : ${boardreply.rewriter}    작성일자 : ${boardreply.redate} </td>
+         <td>작성자 : ${boardreply.m_id}    작성일자 : ${boardreply.bd_dt} </td>
       </tr>
       <tr>
-         <td><textarea name="rememo" rows="5" cols="40"
-            readonly="readonly" class="form-control1">${boardreply.rememo}</textarea>
-            <input type="hidden" name="bno" value="${boardreply.bno }" />
+         <td><textarea name="comm_con" rows="5" cols="40"
+            readonly="readonly" class="form-control1">${boardreply.comm_con}</textarea>
+            <input type="hidden" name="comm_num" value="${boardreply.comm_num}" />
+            <input type="hidden" name="bd_num" value="${boardreply.BD_NUM}" />
          </td>
          <td>
-         	<a href="replyupdate?reno=${boardreply.reno}">댓글수정</a>   
-			<a href="replyDelete?reno=${boardreply.reno}&bno=${boardreply.bno}">댓글삭제</a>
+         	<a href="replyupdate?comm_num=${boardreply.comm_num}">댓글수정</a>   
+			<a href="replyDelete?comm_num=${boardreply.comm_num}&bd_num=${boardreply.bd_num}">댓글삭제</a>
 		</td>
          <button class="btn btn-defalut">댓글수정</button>
+         
+         
          <script>
          $(function(){
             //댓글수정 버튼을 눌렀을 때 처리
             $(".btn-defalut").click(function(){
-               location.href="replyupdate?reno=" + ${boardreply.reno}; 
+               location.href="replyupdate?comm_num=" + ${boardreply.comm_num}; 
             });
          })      
          </script>
+         
          </td>
       </tr>
    </c:forEach>
